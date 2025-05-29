@@ -1,0 +1,147 @@
+<!--
+===========================
+ JOB TEMPLATE HEADER START
+===========================
+-->
+
+<!-- CSS for Header Styling and Responsive Design -->
+<style>
+  :root {
+    --primary-color: #007bff;
+    --light-bg: #ffffff;
+    --dark-bg: #1e1e1e;
+    --text-light: #ffffff;
+    --text-dark: #000000;
+  }
+
+  body[data-theme="light"] {
+    background: var(--light-bg);
+    color: var(--text-dark);
+  }
+
+  body[data-theme="dark"] {
+    background: var(--dark-bg);
+    color: var(--text-light);
+  }
+
+  .header {
+    background-color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    flex-wrap: wrap;
+    color: white;
+  }
+
+  .site-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    flex: 1;
+  }
+
+  .hamburger {
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+
+  .search-bar {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    margin: 5px 0;
+  }
+
+  .search-bar input {
+    padding: 6px;
+    border-radius: 5px;
+    border: none;
+    width: 80%;
+  }
+
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .theme-switcher select {
+    padding: 5px;
+    border-radius: 5px;
+  }
+
+  .home-btn {
+    font-size: 1.2rem;
+    color: white;
+    text-decoration: none;
+  }
+
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    .search-bar input {
+      width: 100%;
+    }
+    .header {
+      flex-direction: column;
+      text-align: center;
+    }
+    .header-right {
+      justify-content: center;
+    }
+  }
+</style>
+
+<!-- HTML HEADER STRUCTURE -->
+<div class="header">
+  <div class="hamburger" onclick="toggleMenu()">
+    &#9776;
+  </div>
+
+  <div class="search-bar">
+    <input type="text" placeholder="Search Jobs..." />
+  </div>
+
+  <div class="site-title">
+    JOB TEMPLATE DEMO
+  </div>
+
+  <div class="header-right">
+    <div class="theme-switcher">
+      <select onchange="changeTheme(this.value)">
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+        <option value="blue">Choose Color</option>
+      </select>
+    </div>
+    <a href="/" class="home-btn">🏠</a>
+  </div>
+</div>
+
+<!-- Ads Placeholder -->
+<div style="text-align: center; padding: 10px; background: #f0f0f0;">
+  <!-- (ads code place here) -->
+  <strong>AD SPACE</strong>
+</div>
+
+<!-- JS THEME SWITCHER LOGIC -->
+<script>
+  function changeTheme(value) {
+    if (value === "light" || value === "dark") {
+      document.body.setAttribute("data-theme", value);
+    } else if (value === "blue") {
+      document.body.style.backgroundColor = "#e0f7fa";
+      document.body.style.color = "#003366";
+    }
+  }
+
+  function toggleMenu() {
+    alert("Menu will slide in here (to be added)");
+  }
+</script>
+
+<!--
+===========================
+ JOB TEMPLATE HEADER END
+===========================
+-->
